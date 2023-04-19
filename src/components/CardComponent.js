@@ -5,7 +5,7 @@ function CardComponent() {
   const [loading, setLoading] = useState(true);
 
   const fecthProduct = () => {
-    fetch("https://api.escuelajs.co/api/v1/categories")
+    fetch("https://api.escuelajs.co/api/v1/products")
       .then((res) => res.json())
       .then((res) => {
         setProducts(res);
@@ -23,7 +23,7 @@ function CardComponent() {
       
         {products.map((product) => (
           <div className="card col-12 col-sm-6 col-md-4 col-lg-3 me-1 border border-none" style={{width:'16rem'}}>
-          <img src={product.image} class="card-img-top" alt="..."  style={{width:'100%', height:'16rem'}}/>
+          <img src={product.images} class="card-img-top" alt="..."  style={{width:'100%', height:'16rem'}}/>
           <div className="card-body">
             <h5 className="card-title">{product.name}</h5>
             <p className="card-text">{product.creationAt}</p>
